@@ -1,11 +1,22 @@
 import './App.css';
-import Header from './Header'
-import National from './National'
+import React, { useState } from "react";
+import Header from './Header';
+import National from './National';
+import Search from './Search'
 
 function App() {
-  return <h1>Howdy</h1>
-
+  const [searchTerm, setSearchTerm] = useState("");
   
+  function handleUpdatedSearch(newSearch){
+    setSearchTerm(newSearch);
+  }
+  
+  return (
+    <div>
+      <h1>Howdy still</h1>
+      <Search searchTerm={searchTerm} onUpdatedSearch={handleUpdatedSearch}/>
+    </div>
+  );
 }
 
 export default App;
