@@ -1,17 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 
-function Search({ searchTerm, onUpdatedSearch }) {
+function Search() {
     return (
       <div>
-        <label>Search</label>
-        <input
-        type="text"
-        id="search"
-        placeholder="search"
-        value={searchTerm}
-        onChange={(e) => onUpdatedSearch(e.target.value)}
-        />
+        <button>
+          <NavLink className="button" to={"/statecard"}>
+            Search
+          </NavLink> 
+        </button>
       </div>
     );
   }
