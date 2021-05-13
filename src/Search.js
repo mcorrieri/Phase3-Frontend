@@ -6,7 +6,7 @@ function Search() {
     return (
       <div>
         <button>
-          <NavLink className="button" to={"/statecard"}>
+          <NavLink className="button" to={"/linechart"}>
             Search
           </NavLink> 
         </button>

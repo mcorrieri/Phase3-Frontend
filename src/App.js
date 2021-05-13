@@ -8,6 +8,7 @@ import StateCard from './StateCard';
 import Wrapper from "./components/Wrapper";
 import { Grid } from "semantic-ui-react";
 import StateChart from './StateChart';
+import LineChart from './components/LineChart';
 
 
 
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route exact path ="/statechart">
               <StateChart/>
+            </Route>
+            <Route path="/linechart">
+              <LineChart/>
             </Route>
             <Route path="*">
               <h1>404 WRONG</h1>
