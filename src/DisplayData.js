@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 
 
@@ -11,13 +10,19 @@ function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percen
             <br></br>
             <p>Vaccine: All</p>
             <br></br>
-            <h3>Moderna:</h3><p>{moderna}</p>
-            <p>Pfizer: {pfizer}</p>
-            <p>Janssen: {janssen}</p>
+            <div className="petersdiv">
+            <p className="vaclabel">Moderna: </p> <p> {moderna.toLocaleString()}</p>
+            </div>
+            <div className="petersdiv">
+            <p className="vaclabel">Pfizer: </p> <p> {pfizer.toLocaleString()}</p>
+            </div>
+            <div className="petersdiv">
+            <p className="vaclabel"> Janssen: </p> <p> {janssen.toLocaleString()}</p>
+            </div>
             <br></br>
-            <p>Total Vaccines Allocated: {totalVaccines}</p>
+            <p>Total Vaccines Allocated: {totalVaccines.toLocaleString()}</p>
             <br></br>
-            <p>Total Percentage Vaccinated: {percentVacc}%</p>
+            <p>Total Percentage Vaccinated: {percentVacc.toFixed(2)}%</p>
             <button className="chartButton"  type="button" onClick={handleChartClick} >
                     Show me the data!
             </button>

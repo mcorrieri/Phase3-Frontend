@@ -46,7 +46,7 @@ function National() {
   return (
     <div>
       <div className="USApic">
-      <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA" style={{ width : 500 }}/>
+      <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA" style={{ width : 600 }}/>
       </div>
         <div>
         

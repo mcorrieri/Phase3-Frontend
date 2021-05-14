@@ -13,7 +13,7 @@ function Header({ onDarkModeClick, isDarkMode, getVaccineValue, getStateValue })
   
   return (
       <div className="header">
-        <button onClick={onDarkModeClick}>
+        <button className="darkbutton" onClick={onDarkModeClick}>
           {isDarkMode ? "Light mode" : "Dark mode"}
         </button>
         <Link className="logoImg" to="/">
