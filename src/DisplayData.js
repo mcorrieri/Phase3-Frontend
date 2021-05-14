@@ -11,7 +11,7 @@ function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percen
             <br></br>
             <p>Vaccine: All</p>
             <br></br>
-            <p>Moderna: {moderna}</p>
+            <h3>Moderna:</h3><p>{moderna}</p>
             <p>Pfizer: {pfizer}</p>
             <p>Janssen: {janssen}</p>
             <br></br>

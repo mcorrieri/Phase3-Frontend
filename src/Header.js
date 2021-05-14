@@ -17,7 +17,7 @@ function Header({ onDarkModeClick, isDarkMode, getVaccineValue, getStateValue })
           {isDarkMode ? "Light mode" : "Dark mode"}
         </button>
         <Link className="logoImg" to="/">
-          <img src="https://i.imgur.com/zpnnzTT.jpg" style={{ width : 200 }} alt="logo" />
+          <img src="https://i.imgur.com/zpnnzTT.jpg" style={{ width : 100 }} alt="logo" />
         </Link>
         <div className="filter">
             <select className="filter-dropdown" id="vaccine" onChange={(e) => getVaccineValue(e.target.value)}>

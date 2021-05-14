@@ -45,7 +45,9 @@ function National() {
   // displayDataArray = filteredData.map(function(dataObj) {
   return (
     <div>
+      <div className="USApic">
       <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA" style={{ width : 500 }}/>
+      </div>
         <div>
         
           <DisplayData
