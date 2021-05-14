@@ -56,7 +56,7 @@ function National() {
           totalVaccines={natsArr[0].totalVaccines}
           percentVacc={natsArr[0].percentVacc}
           handleChartClick={handleChartClick}/>
-          {seeChart ? <LineChart charData={chartArr}/> : null}
+          {seeChart ? <LineChart charData={chartArr} legend="Total Vaccine Allocations"/> : null}
         </div>
     </div>
   );

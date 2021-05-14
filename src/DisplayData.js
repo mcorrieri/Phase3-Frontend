@@ -18,10 +18,8 @@ function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percen
             <p>Total Vaccines Allocated: {totalVaccines}</p>
             <br></br>
             <p>Total Percentage Vaccinated: {percentVacc}%</p>
-            <button className="chartButton"  onClick={handleChartClick} >
-                <NavLink className="button" to={"/linechart"}>
+            <button className="chartButton"  type="button" onClick={handleChartClick} >
                     Show me the data!
-                </NavLink> 
             </button>
         </div>
     );
