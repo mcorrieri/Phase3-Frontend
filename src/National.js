@@ -1,16 +1,25 @@
 import { useEffect, useState } from 'react';
 import DisplayData from './DisplayData';
+import LineChart from './LineChart';
 
 function National() {
  const [natsArr, setNatsArr] = useState([])
  const [chartArr, setChartArr] = useState([])
+ const [seeChart, setSeeChart] = useState(false)
  
+//  console.log(chartArr)
  
  useEffect(() => {
    fetch("http://localhost:9292/statevaccine")
    .then(resp => resp.json())
    .then(function(natsArr) {
      setNatsArr(natsArr)
+    })
+
+    fetch("http://localhost:9292/nationalchart")
+   .then(resp => resp.json())
+   .then(function(chartArr) {
+     setChartArr(chartArr)
     })
   }, [])
   
@@ -20,12 +29,13 @@ function National() {
   }
   
   function handleChartClick() {
-    fetch("http://localhost:9292/nationalchart")
-   .then(resp => resp.json())
-   .then(function(chartArr) {
-     setChartArr(chartArr)
-    })
-    // <LineChart data={chartArr}/>
+  //   fetch("http://localhost:9292/nationalchart")
+  //  .then(resp => resp.json())
+  //  .then(function(chartArr) {
+  //    setChartArr(chartArr)
+  //   })
+    console.log(chartArr)
+    setSeeChart(!seeChart)
   }
 
     if (!chartArr){
@@ -33,7 +43,6 @@ function National() {
     }
     
   // displayDataArray = filteredData.map(function(dataObj) {
-  console.log(chartArr)
   return (
     <div>
       <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA" style={{ width : 500 }}/>
@@ -47,7 +56,7 @@ function National() {
           totalVaccines={natsArr[0].totalVaccines}
           percentVacc={natsArr[0].percentVacc}
           handleChartClick={handleChartClick}/>
-          {/* <LineChart charData={chartArr}/>  */}
+          {seeChart ? <LineChart charData={chartArr}/> : null}
         </div>
     </div>
   );
