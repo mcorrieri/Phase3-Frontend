@@ -1,14 +1,12 @@
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from './Header';
 import National from './National';
-import Search from './Search'
 import StateCard from './StateCard';
-import Wrapper from "./components/Wrapper";
 import { Grid } from "semantic-ui-react";
 import StateChart from './StateChart';
-import LineChart from './components/LineChart';
+import LineChart from './LineChart';
 
 
 

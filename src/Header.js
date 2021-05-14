@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react"
-import { NavLink, Link } from "react-router-dom"
+import React from "react"
+import { Link } from "react-router-dom"
 import Search from './Search';
 
 function Header({ onDarkModeClick, isDarkMode, getVaccineValue, getStateValue }) {
@@ -16,8 +16,8 @@ function Header({ onDarkModeClick, isDarkMode, getVaccineValue, getStateValue })
         <button onClick={onDarkModeClick}>
           {isDarkMode ? "Light mode" : "Dark mode"}
         </button>
-        <Link to="/">
-          <img src="https://i.imgur.com/zpnnzTT.jpg" style={{ width : 225 }} alt="logo" />
+        <Link className="logoImg" to="/">
+          <img src="https://i.imgur.com/zpnnzTT.jpg" style={{ width : 200 }} alt="logo" />
         </Link>
         <div className="filter">
             <select className="filter-dropdown" id="vaccine" onChange={(e) => getVaccineValue(e.target.value)}>

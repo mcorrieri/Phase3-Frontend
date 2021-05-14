@@ -1,4 +1,3 @@
-import StateChart from './StateChart'
 
 function StateCard() {
     return <h1>StateCard</h1>

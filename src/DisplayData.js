@@ -1,7 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 
-function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percentVacc }) {
+
+function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percentVacc, handleChartClick }) {
     return (
         <div className="datadisplay">
             <h1>USA</h1>
@@ -16,9 +18,13 @@ function DisplayData({ lastDate, moderna, pfizer, janssen, totalVaccines, percen
             <p>Total Vaccines Allocated: {totalVaccines}</p>
             <br></br>
             <p>Total Percentage Vaccinated: {percentVacc}%</p>
+            <button className="chartButton"  onClick={handleChartClick} >
+                <NavLink className="button" to={"/linechart"}>
+                    Show me the data!
+                </NavLink> 
+            </button>
         </div>
     );
   }
-  
   export default DisplayData;
   

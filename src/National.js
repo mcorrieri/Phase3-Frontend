@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import StateCard from './StateCard'
 import DisplayData from './DisplayData';
 
 function National() {
- const [statesArr, setStatesArr] = useState([])
  const [natsArr, setNatsArr] = useState([])
+ const [chartArr, setChartArr] = useState([])
  
  
  useEffect(() => {
@@ -20,22 +19,35 @@ function National() {
     return null
   }
   
-  
+  function handleChartClick() {
+    fetch("http://localhost:9292/nationalchart")
+   .then(resp => resp.json())
+   .then(function(chartArr) {
+     setChartArr(chartArr)
+    })
+    // <LineChart data={chartArr}/>
+  }
+
+    if (!chartArr){
+      return null
+    }
+    
   // displayDataArray = filteredData.map(function(dataObj) {
-  console.log(natsArr)
+  console.log(chartArr)
   return (
     <div>
-      <h1>National</h1>
-      <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA"/>
+      <img src="https://i.imgur.com/z9F4DUM.jpg" alt="USA" style={{ width : 500 }}/>
         <div>
-          <p>{statesArr}</p>
+        
           <DisplayData
           lastDate={natsArr[0].lastDate} 
           moderna={natsArr[0].moderna}
           pfizer={natsArr[0].pfizer}
           janssen={natsArr[0].janssen}
           totalVaccines={natsArr[0].totalVaccines}
-          percentVacc={natsArr[0].percentVacc}/> 
+          percentVacc={natsArr[0].percentVacc}
+          handleChartClick={handleChartClick}/>
+          {/* <LineChart charData={chartArr}/>  */}
         </div>
     </div>
   );
